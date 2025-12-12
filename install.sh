@@ -11,6 +11,7 @@ echo "Installing configs from dotfiles repo..."
 mkdir -p ~/.config/fish/functions
 mkdir -p ~/.config/starship
 mkdir -p ~/.config/ghostty
+mkdir -p ~/.config/kitty
 
 # Fish
 if [ -f "$DOTFILES_DIR/fish/config.fish" ]; then
@@ -29,6 +30,13 @@ fi
 if [ -f "$DOTFILES_DIR/ghostty/config" ]; then
     echo "  -> ghostty"
     cp "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/
+fi
+
+# Kitty
+if [ -f "$DOTFILES_DIR/kitty/kitty.conf" ]; then
+    echo "  -> kitty"
+    cp "$DOTFILES_DIR/kitty/kitty.conf" ~/.config/kitty/
+    cp "$DOTFILES_DIR/kitty/colors.conf" ~/.config/kitty/ 2>/dev/null || true
 fi
 
 echo ""

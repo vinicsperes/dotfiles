@@ -26,6 +26,14 @@ if [ -f ~/.config/ghostty/config ]; then
     cp ~/.config/ghostty/config "$DOTFILES_DIR/ghostty/"
 fi
 
+# Kitty
+if [ -f ~/.config/kitty/kitty.conf ]; then
+    echo "  -> kitty"
+    mkdir -p "$DOTFILES_DIR/kitty"
+    cp ~/.config/kitty/kitty.conf "$DOTFILES_DIR/kitty/"
+    cp ~/.config/kitty/colors.conf "$DOTFILES_DIR/kitty/" 2>/dev/null || true
+fi
+
 echo ""
 echo "Done! Configs saved to $DOTFILES_DIR"
 echo ""
