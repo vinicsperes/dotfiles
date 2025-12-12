@@ -1,0 +1,169 @@
+# ============================================
+#  Configuração Starship - Ubuntu Dark Harmony (Revisada e Corrigida)
+# ============================================
+
+palette = "ubuntu_dark"
+
+format = """
+$os\
+[](bg:user_bg fg:os_bg)\
+$username\
+$hostname\
+[](bg:dir_bg fg:user_bg)\
+$directory\
+[](bg:git_bg fg:dir_bg)\
+$git_branch\
+$git_status\
+$git_commit\
+$git_metrics\
+[](bg:lang_bg fg:git_bg)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:lang_bg bg:docker_bg)\
+$docker_context\
+$conda\
+[](fg:docker_bg)\
+$line_break\
+[ᐅ ](os_bg)\
+"""
+
+right_format = ""
+
+
+# ============================================
+#  Módulos
+# ============================================
+
+[os]
+format = "[ $symbol ]($style)"
+style = "bg:os_bg fg:text_dark"
+disabled = false
+
+[os.symbols]
+Ubuntu = ""
+Linux = ""
+Windows = ""
+
+[username]
+show_always = true
+style_user = "bg:user_bg fg:text_light"
+style_root = "bg:user_bg fg:red"
+format = '[ $user ]($style)'
+
+[hostname]
+format = '[@$hostname ](bg:user_bg fg:text_dim)'
+ssh_only = false
+disabled = true
+
+[directory]
+style = "bg:dir_bg fg:text_light"
+format = '[  $path ]($style)[$read_only]($read_only_style)'
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = ' 🔒'
+read_only_style = 'bg:dir_bg fg:red'
+
+
+# ============================================
+#  Git
+# ============================================
+
+[git_branch]
+symbol = ""
+style = "bg:git_bg fg:text_light"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:git_bg fg:text_light"
+format = '[ $all_status$ahead_behind ]($style)'
+
+[git_commit]
+style = "bg:git_bg fg:text_light"
+format = '[($hash$tag)]($style)'
+commit_hash_length = 8
+
+[git_metrics]
+added_style = 'bg:git_bg fg:text_light'
+deleted_style = 'bg:git_bg fg:text_light'
+format = '[+${added}/-${deleted}]($added_style)'
+
+
+# ============================================
+#  Linguagens — CORRIGIDO
+# ============================================
+
+[nodejs]
+symbol = ""
+format = '[ $symbol( $version) ](fg:text_light bg:lang_bg)'
+
+[c]
+symbol = " "
+format = '[ $symbol( $version) ](fg:text_light bg:lang_bg)'
+
+[rust]
+symbol = ""
+format = '[ $symbol( $version) ](fg:text_light bg:lang_bg)'
+
+[golang]
+symbol = ""
+format = '[ $symbol( $version) ](fg:text_light bg:lang_bg)'
+
+[php]
+symbol = ""
+format = '[ $symbol( $version) ](fg:text_light bg:lang_bg)'
+
+[java]
+symbol = " "
+format = '[ $symbol( $version) ](fg:text_light bg:lang_bg)'
+
+[python]
+symbol = ""
+format = '[ $symbol( $version)(\(#$virtualenv\)) ](fg:text_light bg:lang_bg)'
+
+
+# ============================================
+#  Docker / Conda
+# ============================================
+
+[docker_context]
+symbol = ""
+format = '[ $symbol( $context) ](fg:text_light bg:docker_bg)'
+
+[conda]
+symbol = "  "
+format = '[ $symbol$environment ](fg:text_light bg:docker_bg)'
+
+
+# ============================================
+#  Character
+# ============================================
+
+[character]
+success_symbol = '[❯](fg:ubuntu_green)'
+error_symbol   = '[✘](fg:red)'
+
+
+# ============================================
+#  Paleta
+# ============================================
+
+[palettes.ubuntu_dark]
+os_bg     = "#4E9A06"
+user_bg   = "#1b1522"
+dir_bg    = "#3a2645"
+git_bg    = "#2e4a20"
+lang_bg   = "#26263a"
+docker_bg = "#1a1a26"
+
+text_light   = "#e8e4ef"
+text_dim     = "#a48cd9"
+text_dark    = "#0a040e"
+ubuntu_green = "#4E9A06"
+red          = "#ff4d6d"
