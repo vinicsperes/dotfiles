@@ -8,10 +8,9 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Saving configs to dotfiles repo..."
 
 # Fish
-if [ -d ~/.config/fish ]; then
+if [ -f ~/.config/fish/config.fish ]; then
     echo "  -> fish"
     cp ~/.config/fish/config.fish "$DOTFILES_DIR/fish/"
-    cp -r ~/.config/fish/functions/* "$DOTFILES_DIR/fish/functions/" 2>/dev/null || true
 fi
 
 # Starship
@@ -24,14 +23,6 @@ fi
 if [ -f ~/.config/ghostty/config ]; then
     echo "  -> ghostty"
     cp ~/.config/ghostty/config "$DOTFILES_DIR/ghostty/"
-fi
-
-# Kitty
-if [ -f ~/.config/kitty/kitty.conf ]; then
-    echo "  -> kitty"
-    mkdir -p "$DOTFILES_DIR/kitty"
-    cp ~/.config/kitty/kitty.conf "$DOTFILES_DIR/kitty/"
-    cp ~/.config/kitty/colors.conf "$DOTFILES_DIR/kitty/" 2>/dev/null || true
 fi
 
 echo ""
