@@ -14,7 +14,7 @@ if [ -f ~/.config/fish/config.fish ]; then
 fi
 
 # Starship
-if [ -f ~/.config/starship/starship.toml ]; then
+if [ -f ~/.config/starship.toml ]; then
     echo "  -> starship"
     cp ~/.config/starship.toml "$DOTFILES_DIR/starship/"
 fi

@@ -9,7 +9,7 @@ echo "Installing configs from dotfiles repo..."
 
 # Create config directories if they don't exist
 mkdir -p ~/.config/fish
-mkdir -p ~/.config/starship
+mkdir -p ~/.config
 mkdir -p ~/.config/ghostty
 
 # Fish
@@ -21,7 +21,7 @@ fi
 # Starship
 if [ -f "$DOTFILES_DIR/starship/starship.toml" ]; then
     echo "  -> starship"
-    cp "$DOTFILES_DIR/starship/starship.toml" ~/.config/starship/
+    cp "$DOTFILES_DIR/starship/starship.toml" ~/.config/starship.toml
 fi
 
 # Ghostty
