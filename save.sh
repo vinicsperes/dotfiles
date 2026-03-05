@@ -16,7 +16,7 @@ fi
 # Starship
 if [ -f ~/.config/starship/starship.toml ]; then
     echo "  -> starship"
-    cp ~/.config/starship/starship.toml "$DOTFILES_DIR/starship/"
+    cp ~/.config/starship.toml "$DOTFILES_DIR/starship/"
 fi
 
 # Ghostty
