@@ -1,15 +1,26 @@
 # Dotfiles
 
-Personal configuration files for Fish shell, Starship prompt, and Ghostty terminal.
+Personal configuration files for my development environment.
+This repository contains configuration for the **Fish shell**, **Starship prompt**, and **Ghostty terminal**.
 
-## Contents
+The goal is to keep my terminal setup reproducible and easy to restore on a new machine.
 
-- **fish/** - Fish shell configuration
-- **starship/** - Starship prompt with Ubuntu Dark Harmony theme
-- **ghostty/** - Ghostty terminal settings (MonoLisa font, transparency, custom styling)
+---
 
-Requirements
+## 📦 Contents
 
-- [Fish shell](https://fishshell.com/)
-- [Starship](https://starship.rs/)
-- [Ghostty](https://ghostty.org/)
+| Directory     | Description                                                      |
+| ------------- | ---------------------------------------------------------------- |
+| **fish/**     | Configuration files for the Fish shell                           |
+| **starship/** | Prompt configuration using a custom theme                        |
+| **ghostty/**  | Terminal settings such as font, transparency, and UI preferences |
+
+---
+
+## ⚙️ Requirements
+
+Make sure the following tools are installed:
+
+* [Fish Shell](https://fishshell.com/)
+* [Starship Prompt](https://starship.rs/)
+* [Ghostty Terminal](https://ghostty.org/)
